@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Entities
+  m_EditorClassIdentifier: 
+  m_GroupName: Entities
+  m_Data:
+    m_SerializedData: []
+  m_GUID: a0d09264a3c64ed46bbbd743108b5d5e
+  m_SerializeEntries:
+  - m_GUID: 53cf7c6ee03817a4a9ba7f3c3477146a
+    m_Address: EntityHeroKnight
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6e196c86e399fd84f90fd7d5f920d6ec
+    m_Address: EntityHeroArcher
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 40acbe39dd425bd458e0cc9fa753c2ef, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 68dbf710c20dca94a9474bae5d38be82, type: 2}
+    - {fileID: 11400000, guid: 49f1657be5894ba448e239a3a1720397, type: 2}
