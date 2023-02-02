@@ -58,6 +58,23 @@ public class Field : MonoBehaviour
         }
     }
 
+    public FieldCell this[EFieldSide side, EFieldLevel level, EFieldLinePosition position]
+    {
+        get
+        {
+            for (int i = 0; i < _cells.Length; i++)
+            {
+                if (_cells[i].Index.Equals(side,level, position))
+                {
+                    return _cells[i];
+                }
+            }
+
+            Debug.LogError($"Not found cell with index {side} {level} {position}");
+            return null;
+        }
+    }
+
     public void ActionForAllCells(Action<FieldCell> action)
     {
         for (int i = 0; i < _cells.Length; i++)

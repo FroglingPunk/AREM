@@ -16,10 +16,20 @@ public class FieldCellIndex
     }
 
 
+    public override int GetHashCode()
+    {
+        return base.GetHashCode();
+    }
+
     public override bool Equals(object obj)
     {
         var other = obj as FieldCellIndex;
         return Side == other.Side && Level == other.Level && Position == other.Position;
+    }
+
+    public bool Equals(EFieldSide side, EFieldLevel level, EFieldLinePosition position)
+    {
+        return Side == side && Level == level && Position == position;
     }
 
     public override string ToString()

@@ -1,4 +1,6 @@
-public abstract class SkillFactoryBase
+using UnityEngine;
+
+public abstract class SkillFactoryBase : ScriptableObject
 {
     protected SkillExecutionContext _context;
 

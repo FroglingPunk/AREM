@@ -4,4 +4,6 @@ public class SkillExecutionContext
 
     public Entity Source;
     public Entity Target;
+
+    public SkillRange Range;
 }

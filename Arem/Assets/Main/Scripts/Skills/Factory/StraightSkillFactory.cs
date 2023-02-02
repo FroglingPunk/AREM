@@ -1,3 +1,6 @@
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "StraightSkillFactory", menuName = "Skills/Factories/Straight", order = 0)]
 public class StraightSkillFactory : SkillFactoryBase
 {
     protected override void OnActivate()
@@ -15,14 +18,19 @@ public class StraightSkillFactory : SkillFactoryBase
 
     protected override void MarkPossibleTargets()
     {
-        var source = this.GetController<TurnController>().CurrentTurnEntity.Value;
-        var entitiesManager = this.GetController<EntitiesManager>();
-
-        entitiesManager[source.Team.OppositeTeam()].ForEach((entity) =>
+        var range = _context.Range;
+        Debug.Log(range is null);
+        Debug.Log(range.PossibleSides is null);
+        for (int sideID = 0; sideID < range.PossibleSides.Length; sideID++)
         {
-            if (entity != _context.Source)
-                entity.FieldCell.Mark(ECellMarkState.PossibleForAction);
-        });
+            for (int levelID = 0; levelID < range.PossibleLevels.Length; levelID++)
+            {
+                for (int posID = 0; posID < range.PossiblePositions.Length; posID++)
+                {
+                    Field.Instance[range.PossibleSides[sideID], range.PossibleLevels[levelID], range.PossiblePositions[posID]].Mark(ECellMarkState.PossibleForAction);
+                }
+            }
+        }
     }
 
     private void OnFieldCellSelected(IMessage msg)
