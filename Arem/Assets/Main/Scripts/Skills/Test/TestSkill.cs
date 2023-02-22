@@ -6,6 +6,7 @@ public class TestSkill : StraightSkillBase
 {
     private SkillFactoryBase _factory = new StraightSkillFactory();
     public override SkillFactoryBase Factory => _factory;
+    public override SkillRange Range => throw new System.NotImplementedException();
 
 
     protected override IEnumerator InternalExecuting(SkillExecutionContext context)

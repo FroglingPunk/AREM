@@ -12,7 +12,7 @@ public class Field : MonoBehaviour
             {
                 _instance = FindObjectOfType<Field>();
 
-                if(_instance == null)
+                if (_instance == null)
                 {
                     Debug.LogError("Field not found!");
                 }
@@ -38,6 +38,9 @@ public class Field : MonoBehaviour
         }
 
         _cells = GetComponentsInChildren<FieldCell>();
+
+        var camera = Camera.main;
+        transform.position = new Vector3(camera.transform.position.x, transform.position.y, transform.position.z);
     }
 
 
@@ -48,15 +51,29 @@ public class Field : MonoBehaviour
             for (int i = 0; i < _cells.Length; i++)
             {
                 if (_cells[i].Index.Equals(index))
-                {
                     return _cells[i];
-                }
             }
 
             Debug.LogError($"Not found cell with index {index}");
             return null;
         }
     }
+
+    public FieldCell this[EFieldSide side, EFieldLevel level, EFieldLinePosition pos]
+    {
+        get
+        {
+            for (int i = 0; i < _cells.Length; i++)
+            {
+                if (_cells[i].Index.Equals(side, level, pos))
+                    return _cells[i];
+            }
+
+            Debug.LogError($"Not found cell with index {side} {level} {pos}");
+            return null;
+        }
+    }
+
 
     public void ActionForAllCells(Action<FieldCell> action)
     {

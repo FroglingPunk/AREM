@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Scenes
+  m_EditorClassIdentifier: 
+  m_GroupName: Scenes
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 23b6e7f21da812c4e8249d55e760cd68
+  m_SerializeEntries:
+  - m_GUID: 5e341d8e0581fd0489381eaf9e81ba68
+    m_Address: Crusade
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2cda990e2423bbf4892e6590ba056729
+    m_Address: Battle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3c5072f07fc420d40ac1a36e55f04d09
+    m_Address: Location
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 14d0be530b5047e44bb55300dfca9b76
+    m_Address: World Map
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 40acbe39dd425bd458e0cc9fa753c2ef, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 76c698a00675b1d47b4296b999cd62af, type: 2}
+    - {fileID: 11400000, guid: 719c0c0672f67a943b77ff0a1e93ded7, type: 2}

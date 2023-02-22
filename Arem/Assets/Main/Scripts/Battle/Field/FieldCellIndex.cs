@@ -22,8 +22,18 @@ public class FieldCellIndex
         return Side == other.Side && Level == other.Level && Position == other.Position;
     }
 
+    public bool Equals(EFieldSide side, EFieldLevel level, EFieldLinePosition pos)
+    {
+        return Side == side && Level == level && Position == pos;
+    }
+
     public override string ToString()
     {
         return $"Side : {Side} |Level : {Level} |Position : {Position}";
+    }
+
+    public override int GetHashCode()
+    {
+        return base.GetHashCode();
     }
 }
