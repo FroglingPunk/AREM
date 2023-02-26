@@ -8,11 +8,20 @@ public class Entity : MonoBehaviour
     public Skill[] Skills => _data.GameParams.Skills;
     public ETeam Team => _data.Team;
     public FieldCell FieldCell { get; protected set; }
+    public EntityHealthPoints HealthPoints { get; protected set; }
 
 
     protected virtual void Start()
     {
         this.GetController<MessageBus>().Callback(new CreateMessage<Entity>(this));
+
+        HealthPoints = new EntityHealthPoints();
+        HealthPoints.MaxValue.Value = 10;
+        HealthPoints.CurrentValue.Value = 10;
+
+        var bars = GetComponentsInChildren<BarBase>();
+        for (var i = 0; i < bars.Length; i++)
+            bars[i].Init(this);
     }
 
     protected virtual void OnDestroy()
@@ -23,7 +32,13 @@ public class Entity : MonoBehaviour
 
     public void GetDamage(int damage)
     {
+        Debug.Log($"Get {damage} damage to {gameObject.name} ");
 
+        var previousHP = HealthPoints.CurrentValue.Value;
+
+        HealthPoints.CurrentValue.Value -= damage;
+
+        this.GetController<MessageBus>().Callback(new EntityHPChangedMessage(this, previousHP, HealthPoints.CurrentValue.Value));
     }
 
 

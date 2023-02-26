@@ -1,4 +1,5 @@
 public enum ESkillType
 {
-    Test
+    Test,
+    Skip
 }

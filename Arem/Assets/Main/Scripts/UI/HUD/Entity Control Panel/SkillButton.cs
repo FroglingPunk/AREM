@@ -12,6 +12,6 @@ public class SkillButton : MonoBehaviour, IHighlightable
     public void Init(Skill skill)
     {
         Skill = skill;
-        _imageContent.sprite = _imageContent.sprite;
+        _imageContent.sprite = skill.Sprite;
     }
 }

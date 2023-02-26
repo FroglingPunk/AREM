@@ -17,13 +17,9 @@ public class MessageBus : ControllerBase
     public void Subscribe<T>(Action<IMessage> callback) where T : IMessage
     {
         if (!_callbacks.ContainsKey(typeof(T)))
-        {
             _callbacks.Add(typeof(T), callback);
-        }
         else
-        {
             _callbacks[typeof(T)] += callback;
-        }
     }
 
     public void Unsubscribe<T>(Action<IMessage> callback) where T : IMessage

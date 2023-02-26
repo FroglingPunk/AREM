@@ -30,6 +30,9 @@ public class TestSkill : StraightSkillBase
 
         context.Source.transform.position = a;
 
+        var bleedingEffect = new EntityEffectBleeding(context.Target, 3, 3);
+        bleedingEffect.Init();
+
         yield return null;
     }
 }

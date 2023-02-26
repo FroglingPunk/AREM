@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59c2936cf89a3614681a4f8543d250bf, type: 3}
-  m_Name: TestSkill
+  m_Script: {fileID: 11500000, guid: 81688a947c30d404cbbd16dd51293bcf, type: 3}
+  m_Name: SkipSkill
   m_EditorClassIdentifier: 
-  _skillType: 0
+  _skillType: 1
   _audioAssetName: 
-  _sprite: {fileID: 21300000, guid: fb6ee3ef966fd39409d80ae34b20cfab, type: 3}
+  _sprite: {fileID: 21300000, guid: 0779ad3feec52124e97114bcbb12ef13, type: 3}

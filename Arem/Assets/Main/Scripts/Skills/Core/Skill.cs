@@ -5,11 +5,11 @@ public abstract class Skill : ScriptableObject
 {
     [SerializeField] private ESkillType _skillType;
     [SerializeField] private string _audioAssetName;
-    [SerializeField] protected Texture2D _sprite;
+    [SerializeField] protected Sprite _sprite;
 
     public CallbackVariable<ESkillState> State { get; private set; } = new CallbackVariable<ESkillState>(ESkillState.Inactive);
     public ESkillType SkillType => _skillType;
-    public Texture2D Sprite => _sprite;
+    public Sprite Sprite => _sprite;
 
     public abstract SkillFactoryBase Factory { get; }
     public abstract SkillRange Range { get; }

@@ -23,7 +23,7 @@ public class CurrentTurnFieldCellMark : MonoBehaviour
         var cell = entity.FieldCell;
 
         transform.SetParent(cell.transform, true);
-        transform.localPosition = new Vector3(0f, -0.6f, 0f);
+        transform.localPosition = new Vector3(0f, -0.8f, 0f);
     }
 
     private void OnBattleStateChanged(EBattleState state)
