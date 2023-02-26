@@ -46,6 +46,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 525637247a438c747a42f9179e8c5e0c, type: 2}
   - {fileID: 11400000, guid: f70ce2a8407f78b4dbde92952ac9d89d, type: 2}
   - {fileID: 11400000, guid: 18cfd6f5a53616b4c81a717689564d70, type: 2}
+  - {fileID: 11400000, guid: cca3dcd8f76739f48a0e29c40686dd64, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -89,6 +90,7 @@ MonoBehaviour:
     - default
     - EntityHero
     - GameParamsEntityData
+    - PopUp
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 91ff6044ada453d4e9d90556734d025f, type: 2}

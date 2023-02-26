@@ -43,8 +43,22 @@ public class TestMoveControl : MonoBehaviour
         while (Vector3.Distance(transform.position, locationMapPoint.transform.position) > 1f)
             yield return null;
 
-        var runner = new ActionsRunner();
-        runner.Setup(new LoadSceneStep("Location"));
-        runner.Run();
+        var popUpFactory = ControllersContainer.GetController<PopUpFactory>();
+        var popUp = popUpFactory.Create<PopUpViewEnterLocation>();
+
+        var contextData = new PopUpEnterLocationContextData(
+            locationMapPoint.EnterLocationContextData.Description,
+            locationMapPoint.EnterLocationContextData.Sprite,
+            () =>
+            {
+                popUp.Hide();
+
+                var runner = new ActionsRunner();
+                runner.Setup(new LoadSceneStep(locationMapPoint.SceneName));
+                runner.Run();
+            },
+            () => popUp.Hide());
+
+        popUp.Show(contextData);
     }
 }

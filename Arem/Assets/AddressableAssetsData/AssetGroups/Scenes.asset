@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: 23b6e7f21da812c4e8249d55e760cd68
   m_SerializeEntries:
   - m_GUID: 5e341d8e0581fd0489381eaf9e81ba68
-    m_Address: Crusade
+    m_Address: Crusade Abandoned Mill
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 2cda990e2423bbf4892e6590ba056729
@@ -31,6 +31,14 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: 14d0be530b5047e44bb55300dfca9b76
     m_Address: World Map
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 91d203a978de36e42b76939c97049c9c
+    m_Address: Location Abandoned Mill
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 84cf976fd2afdba4393dc496f88996a5
+    m_Address: Crusade
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

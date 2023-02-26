@@ -8,6 +8,28 @@ public static class ControllersContainer
     private static Dictionary<Type, IController> _controllers = new Dictionary<Type, IController>();
 
 
+    public static void AddController<T>(T controller) where T : IController
+    {
+        if (_controllers.ContainsKey(typeof(T)))
+        {
+            Debug.LogError($"Controllers container already contains {typeof(T)} controller");
+            return;
+        }
+
+        _controllers.Add(typeof(T), controller);
+    }
+
+    public static void AddControllerAs<T, U>(T controller) where T : IController
+    {
+        if (_controllers.ContainsKey(typeof(U)))
+        {
+            Debug.LogError($"Controllers container already contains {typeof(T)} controller as {typeof(U)}");
+            return;
+        }
+
+        _controllers.Add(typeof(U), controller);
+    }
+
     public static T CreateMonoController<T>() where T : MonoControllerBase
     {
         if (_controllers.ContainsKey(typeof(T)))
@@ -38,7 +60,7 @@ public static class ControllersContainer
         return controller;
     }
 
-    public static T CreateController<T, U>() where T : ControllerBase, new()
+    public static T CreateControllerAs<T, U>() where T : ControllerBase, new()
     {
         if (_controllers.ContainsKey(typeof(U)))
             return _controllers[typeof(U)] as T;
@@ -64,5 +86,10 @@ public static class ControllersContainer
     public static T GetController<T>() where T : class, IController 
     {
         return _controllers.ContainsKey(typeof(T)) ? (T)_controllers[typeof(T)] : null;
+    }
+
+    public static bool ContainsController<T>()
+    {
+        return _controllers.ContainsKey(typeof(T));
     }
 }

@@ -4,31 +4,47 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-public class PopUpFactory : MonoBehaviour
+public class PopUpFactory : MonoControllerBase
 {
-    private static Dictionary<Type, PopUpViewBase> _prefabs = new Dictionary<Type, PopUpViewBase>();
+    private Dictionary<Type, GameObject> _prefabs = new Dictionary<Type, GameObject>();
+    private Dictionary<Type, IPopUpView> _popUps = new Dictionary<Type, IPopUpView>();
 
-    private Dictionary<Type, PopUpViewBase> _popUps = new Dictionary<Type, PopUpViewBase>();
     private Canvas _canvas;
 
 
-    private void Start()
+    protected override void InternalInit()
     {
+        base.InternalInit();
+
+        if (ControllersContainer.ContainsController<PopUpFactory>())
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        ControllersContainer.AddController(this);
+        DontDestroyOnLoad(gameObject);
+
         _canvas = GetComponentInChildren<Canvas>();
+        StartCoroutine(LoadPopUpPrefabs());
     }
 
+    protected override void InternalDestroy()
+    {
+       
+    }
 
-    public T Create<T>() where T : PopUpViewBase
+    public IPopUpView Create<T>() where T : IPopUpView
     {
         if (_popUps.ContainsKey(typeof(T)))
-            return _popUps[typeof(T)] as T;
+            return _popUps[typeof(T)];
 
-        var popUp = Instantiate(_prefabs[typeof(T)], _canvas.transform);
+        var popUp = Instantiate(_prefabs[typeof(T)], _canvas.transform).GetComponent<IPopUpView>();
         _popUps.Add(typeof(T), popUp);
 
         popUp.Hide();
 
-        return popUp as T;
+        return popUp;
     }
 
     public void HideAllPopUps()
@@ -37,15 +53,16 @@ public class PopUpFactory : MonoBehaviour
             popUp.Hide();
     }
 
-    public static IEnumerator LoadPopUpPrefabs()
+
+    private IEnumerator LoadPopUpPrefabs()
     {
         if (_prefabs.Count > 0)
             yield break;
 
         var handle = Addressables.LoadAssetsAsync<GameObject>("PopUp", (popUp) =>
         {
-            var component = popUp.GetComponent<PopUpViewBase>();
-            _prefabs.Add(component.GetType(), component);
+            var component = popUp.GetComponent<IPopUpView>();
+            _prefabs.Add(component.GetType(), popUp);
         });
 
         yield return handle;
