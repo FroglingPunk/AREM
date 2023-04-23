@@ -34,17 +34,17 @@ public class PopUpFactory : MonoControllerBase
        
     }
 
-    public IPopUpView Create<T>() where T : IPopUpView
+    public T Create<T>() where T : IPopUpView
     {
         if (_popUps.ContainsKey(typeof(T)))
-            return _popUps[typeof(T)];
+            return (T)_popUps[typeof(T)];
 
         var popUp = Instantiate(_prefabs[typeof(T)], _canvas.transform).GetComponent<IPopUpView>();
         _popUps.Add(typeof(T), popUp);
 
         popUp.Hide();
 
-        return popUp;
+        return (T)popUp;
     }
 
     public void HideAllPopUps()

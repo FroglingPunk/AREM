@@ -22,6 +22,46 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - PopUp
+  - m_GUID: 6d6621a6d4837814b878b3efc52355d7
+    m_Address: PopUp Context Actions
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopUp
+  - m_GUID: 05a19d7529fac914d8eecac1a038cb48
+    m_Address: PopUp Create Actor
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopUp
+  - m_GUID: f2039a58829e226419d78ae077474f76
+    m_Address: PopUp Create Action State
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopUp
+  - m_GUID: 97b3797f9a0c9a14cb5ad031e059e913
+    m_Address: PopUp Create Action Condition
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopUp
+  - m_GUID: 5624169b48e564d40bd0688d401f1c0b
+    m_Address: PopUp Adjust Action
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopUp
+  - m_GUID: cb18220791fa65a48b5a8468ed7da02c
+    m_Address: PopUp Rename Actor
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopUp
+  - m_GUID: 156576c4b00d94f468a6100b92941b00
+    m_Address: PopUp Notification
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopUp
+  - m_GUID: 26c8fe4aa32d4cc4696c733adb21b018
+    m_Address: PopUp Rename Action State
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopUp
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 40acbe39dd425bd458e0cc9fa753c2ef, type: 2}
   m_SchemaSet:

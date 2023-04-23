@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Scenario Constructor
+  m_EditorClassIdentifier: 
+  m_GroupName: Scenario Constructor
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 9cb4d83e0ac21d748992dff9d5a47527
+  m_SerializeEntries:
+  - m_GUID: c1298509eeac99647bf6182d0d21809b
+    m_Address: Table Configuration
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 40acbe39dd425bd458e0cc9fa753c2ef, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 65b73199e70feea4ba7e167f63ae94e3, type: 2}
+    - {fileID: 11400000, guid: d9c1ec348d23249448e6bc1b7deff7d1, type: 2}

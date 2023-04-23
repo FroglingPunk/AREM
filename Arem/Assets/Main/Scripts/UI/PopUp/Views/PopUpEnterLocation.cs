@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PopUpViewEnterLocation : PopUpViewBase<PopUpEnterLocationContextData>
+public class PopUpEnterLocation : PopUpViewBase<PopUpEnterLocationContextData>
 {
     [SerializeField] private Image _imageLocation;
 

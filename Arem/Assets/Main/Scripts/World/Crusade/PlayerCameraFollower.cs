@@ -6,13 +6,13 @@ public class PlayerCameraFollower : MonoBehaviour
 {
     [SerializeField] Vector2 _limitPositionX;
 
-    private TestMoveControl _player;
+    private TestPlayer _player;
     private Vector3 _lastPlayerPosition;
 
 
     private void Start()
     {
-        _player = FindObjectOfType<TestMoveControl>();
+        _player = FindObjectOfType<TestPlayer>();
         _lastPlayerPosition = _player.transform.position;
     }
 

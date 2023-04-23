@@ -44,7 +44,7 @@ public class TestMoveControl : MonoBehaviour
             yield return null;
 
         var popUpFactory = ControllersContainer.GetController<PopUpFactory>();
-        var popUp = popUpFactory.Create<PopUpViewEnterLocation>();
+        var popUp = popUpFactory.Create<PopUpEnterLocation>();
 
         var contextData = new PopUpEnterLocationContextData(
             locationMapPoint.EnterLocationContextData.Description,
